@@ -4,7 +4,7 @@ let image = document.getElementById("image");
 output.innerHTML = slider.value; // Display the default slider value
 let imagePath = "assets\\pictures\\laptop";
 let sufix='.jpg';
-let interval=1000;
+let interval=1;
 let timeouts = [];
   image.style.visibility='hidden';
 // Update the current slider value (each time you drag the slider handle)
