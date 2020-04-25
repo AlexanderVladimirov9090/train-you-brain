@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css\base-styles.css">
+
+  </head>
+  <body>
+    <h1  class="d-flex justify-content-center">Train your brain</h1>
+    <div class="d-flex justify-content-center">
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input class="searchBar" type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      Image per second:
+      <p id="demo" ></p>
+    </div>
+    <div class="slidecontainer d-flex justify-content-center">
+          <input type="range" min="1" max="60" value="1" class="slider" id="speedRange">
+    </div>
+    <div class="d-flex justify-content-center">
+            <button onclick="iterate();" type="button" name="button" class="runButton">Run training</button>
+    </div>
+  <div class="d-flex justify-content-center">
+    <img  src="assets\pictures\laptop1.jpg" alt="Smiley face" height="400" width="400" id="image">
+
+  </div>
+
+    <script src="javascript\image-loader.js"></script>
+  </body>
+</html>

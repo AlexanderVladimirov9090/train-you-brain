@@ -1,0 +1,82 @@
+.slidecontainer {
+  width: 100%;
+  margin-bottom: 20px
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 40%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+ .search-container {
+  float: right;
+  margin-bottom: 20px
+}
+
+ .searchBar {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+ .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+ .search-container button:hover {
+  background: #ccc;
+}
+
+.runButton{
+  padding: 5px;
+  background: #ddd;
+  font-size: 17px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+}
