@@ -19,13 +19,9 @@ function sleep(ms) {
 
 async function iterate(){
 image.style.visibility='visible';
-let timeout=1000;
-timeouts.forEach((item, i) => {
-   clearTimeout(item);
-});
-
   for(let i=1; i <= 60; i++){
     image.src = imagePath+i+sufix;
     await sleep(1000/interval);
   }
+  image.style.visibility='hidden';
 }
