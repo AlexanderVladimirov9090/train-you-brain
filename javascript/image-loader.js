@@ -13,8 +13,11 @@ slider.oninput = function() {
   interval=this.value;
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+} 
 
-function iterate(){
+async function iterate(){
 image.style.visibility='visible';
 let timeout=1000;
 timeouts.forEach((item, i) => {
@@ -22,11 +25,7 @@ timeouts.forEach((item, i) => {
 });
 
   for(let i=1; i <= 60; i++){
-  let imageTimeout=  setTimeout(()=>{
     image.src = imagePath+i+sufix;
-  },timeout);
-  timeouts.push(imageTimeout);
-  timeout+=(1000/interval);
-console.log(1000/interval,interval,timeout);
+    await sleep(1000/interval);
   }
 }
