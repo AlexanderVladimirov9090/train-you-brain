@@ -23,14 +23,14 @@
   appearance: none;
   width: 25px;
   height: 25px;
-  background: #4CAF50;
+  background: black;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: #4CAF50;
+  background: black;
   cursor: pointer;
 }
 
@@ -39,6 +39,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
 }
 
 
@@ -79,4 +80,10 @@ body {
   cursor: pointer;
   border: 1px solid black;
   border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.image{
+ height: 30%;
+ width: 30%;
 }
