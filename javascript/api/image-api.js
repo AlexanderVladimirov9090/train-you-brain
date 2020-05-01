@@ -19,10 +19,10 @@ function loadDoc() {
             }
             imagesLoaded();
         }
-        if(this.stat === "fail"){
+        if (this.stat === "fail") {
             imagesError();
         }
-      
+
     };
     xhttp.open("GET", `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${keyword}&per_page=200&page=1&format=json&nojsoncallback=1`);
     xhttp.send();
@@ -31,15 +31,15 @@ function loadDoc() {
 function imagesLoaded() {
     var x = document.getElementById("snackbarSuccess");
     x.className = "show";
-    x.value='Images Loaded! Now you can train.';
+    x.value = 'Images Loaded! Now you can train.';
     setTimeout(function () {
-         x.className = x.className.replace("show", ""); 
-        }, 3000);
-} 
+        x.className = x.className.replace("show", "");
+    }, 3000);
+}
 
 function imagesError() {
     var x = document.getElementById("snackbarError");
     x.className = "show";
-    x.value='No images are found.';
+    x.value = 'No images are found.';
     setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 } 

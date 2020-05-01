@@ -19,12 +19,12 @@ function sleep(ms) {
 }
 
 async function iterate() {
-  if(!results){
+  if (!results) {
     return;
   }
   button.style.visibility = 'hidden';
   preload();
-  
+
   image.style.visibility = 'visible';
   for (const eachPicture of results.photos.photo) {
     image.src = eachPicture.picSrouce;
@@ -32,10 +32,10 @@ async function iterate() {
   }
   image.style.visibility = 'hidden';
   button.style.visibility = 'visible';
-  
+
 }
 
-function preload(){
+function preload() {
   for (const eachPicture of results.photos.photo) {
     image.src = eachPicture.picSrouce;
   }
