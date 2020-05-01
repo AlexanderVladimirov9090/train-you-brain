@@ -12,10 +12,10 @@
     <h1  class="d-flex justify-content-center">Train your brain</h1>
     <div class="d-flex justify-content-center">
       <div class="search-container">
-        <form action="/action_page.php">
-          <input class="searchBar" type="text" placeholder="Search.." name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+       
+          <input id="searchBar" class="searchBar" type="text" placeholder="Search.." name="search">
+          <button type="submit" onclick="loadDoc()"><i class="fa fa-search"></i></button>
+       
       </div>
     </div>
     <div class="d-flex justify-content-center">
@@ -25,13 +25,16 @@
     <div class="slidecontainer d-flex justify-content-center">
           <input type="range" min="1" max="60" value="1" class="slider" id="speedRange">
     </div>
-    <div class="d-flex justify-content-center">
+    <div id="trainButton" class="d-flex justify-content-center">
             <button onclick="iterate();" type="button" name="button" class="runButton">Run training</button>
     </div>
   <div class="d-flex justify-content-center">
-    <img  src="assets\pictures\laptop1.jpg" alt="Smiley face" class="image"  id="image">
+    <img   alt="Smiley face" class="image"  id="image">
 
   </div>
+  <div id="snackbarSuccess">Images Loaded! Now you can train.</div>
+  <div id="snackbarError">No images are found!</div>
     <script src="javascript\image-loader.js"></script>
+    <script src="javascript\api\image-api.js"></script>
   </body>
 </html>
