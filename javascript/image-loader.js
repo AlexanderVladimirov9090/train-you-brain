@@ -1,13 +1,12 @@
 let slider = document.getElementById("speedRange");
 let output = document.getElementById("demo");
-let image = document.getElementById("image");
 let button = document.getElementById("trainButton");
+let imageHolder = document.getElementById("imageHolder");
 output.innerHTML = slider.value; // Display the default slider value
 let imagePath = "assets\\pictures\\laptop";
 let sufix = '.jpg';
-let interval = 1;
+let interval = slider.value;
 let timeouts = [];
-image.style.visibility = 'hidden';
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function () {
   output.innerHTML = this.value;
@@ -24,19 +23,18 @@ async function iterate() {
   }
   button.style.visibility = 'hidden';
   preload();
-
-  image.style.visibility = 'visible';
   for (const eachPicture of results.photos.photo) {
-    image.src = eachPicture.picSrouce;
+    let image = document.getElementById(eachPicture.id);
+    image.style.display = "block";
     await sleep(1000 / interval);
+    image.style.display = "none";
   }
-  image.style.visibility = 'hidden';
   button.style.visibility = 'visible';
 
 }
 
 function preload() {
   for (const eachPicture of results.photos.photo) {
-    image.src = eachPicture.picSrouce;
+    imageHolder.appendChild(eachPicture.picSrouce)
   }
 }

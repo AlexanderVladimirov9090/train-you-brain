@@ -1,7 +1,6 @@
 const apiKey = '162f8c531c9a63e66d92cc5cb713c709';
 let results;
 function loadDoc() {
-    console.log('Hello');
     searchBar = document.getElementById('searchBar');
     if (!searchBar.value) {
         return;
@@ -11,11 +10,13 @@ function loadDoc() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             results = JSON.parse(this.response);
-            console.log(results)
             for (const eachResult of results.photos.photo) {
-                console.log(eachResult)
-                eachResult.picSrouce = `https://farm${eachResult.farm}.staticflickr.com/${eachResult.server}/${eachResult.id}_${eachResult.secret}.jpg`
-                console.log()
+                let image = new Image();
+                image.id = eachResult.id;
+                image.style.display = "none";
+                image.className = "image";
+                image.src = `https://farm${eachResult.farm}.staticflickr.com/${eachResult.server}/${eachResult.id}_${eachResult.secret}.jpg`;
+                eachResult.picSrouce = image;
             }
             imagesLoaded();
         }
@@ -24,7 +25,7 @@ function loadDoc() {
         }
 
     };
-    xhttp.open("GET", `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${keyword}&per_page=200&page=1&format=json&nojsoncallback=1`);
+    xhttp.open("GET", `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${keyword}&per_page=2000&page=1&format=json&nojsoncallback=1`);
     xhttp.send();
 }
 
