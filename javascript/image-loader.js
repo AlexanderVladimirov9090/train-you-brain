@@ -2,6 +2,7 @@ let slider = document.getElementById('speedRange'); // Slider
 let output = document.getElementById('demo'); // Visual representation of slider value. 
 let button = document.getElementById('trainButton'); // Button for training
 let imageHolder = document.getElementById('imageHolder'); // Container that hold the images.
+let centered = document.getElementById('centered'); // Container that hold the images.
 output.innerHTML = slider.value; // Display the default slider value
 let sufix = '.jpg'; // image sufix.
 let interval = slider.value; // current interval.
@@ -48,6 +49,6 @@ async function iterate() {
  */
 function preload() {
   for (const eachPicture of results.photos.photo) {
-    imageHolder.appendChild(eachPicture.picSrouce)
+    centered.appendChild(eachPicture.picSrouce)
   }
 }

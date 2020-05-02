@@ -31,7 +31,19 @@
   <div id="trainButton"  class="d-flex justify-content-center" style="visibility: hidden;">
     <button onclick="iterate();" type="button" name="button" class="runButton">Run training</button>
   </div>
-  <div id="imageHolder" class="d-flex justify-content-center">
+  <div id="imageHolder" >
+    <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-center">
+        <button>Previous</button>
+        <button>Pause</button>
+        <button>Next </button>
+      </div>
+      <button>X</button>
+    </div>
+  
+    <div id="centered" class="d-flex justify-content-center" style="height: 100%;">
+    
+      </div>
   </div>
   <div id="snackbarSuccess">Images Loaded! Now you can train.</div>
   <div id="snackbarError">No images are found!</div>
