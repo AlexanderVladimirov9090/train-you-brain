@@ -17,7 +17,7 @@
     <div class="search-container">
 
       <input id="searchBar" class="searchBar" type="text" placeholder="Search.." name="search">
-      <button type="submit" onclick="loadDoc()"><i class="fa fa-search"></i></button>
+      <button id="searchButton" type="submit" onclick="search()"><i class="fa fa-search"></i></button>
 
     </div>
   </div>
@@ -28,7 +28,7 @@
   <div class="slidecontainer d-flex justify-content-center">
     <input type="range" min="1" max="60" value="1" class="slider" id="speedRange">
   </div>
-  <div id="trainButton" class="d-flex justify-content-center">
+  <div id="trainButton"  class="d-flex justify-content-center" style="visibility: hidden;">
     <button onclick="iterate();" type="button" name="button" class="runButton">Run training</button>
   </div>
   <div id="imageHolder" class="d-flex justify-content-center">
