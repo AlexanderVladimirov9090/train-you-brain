@@ -28,22 +28,22 @@
   <div class="slidecontainer d-flex justify-content-center">
     <input type="range" min="1" max="60" value="1" class="slider" id="speedRange">
   </div>
-  <div id="trainButton"  class="d-flex justify-content-center" style="visibility: hidden;">
-    <button onclick="iterate();" type="button" name="button" class="runButton">Run training</button>
+  <div id="trainButton" class="d-flex justify-content-center" style="visibility: hidden;">
+    <button onclick="formStart();" type="button" name="button" class="runButton">Run training</button>
   </div>
-  <div id="imageHolder" >
-    <div class="d-flex justify-content-between">
-      <div class="d-flex justify-content-center">
-        <button>Previous</button>
-        <button>Pause</button>
-        <button>Next </button>
+  <div id="imageHolder">
+    <div class="d-flex justify-content-between" style=" padding-top: 5px;">
+      <div id="menuHolder" class="d-flex justify-content-center">
+        <button class="runButton" onclick="stepBack();" style="width: 80px; padding: 5px;">Previous</button>
+        <input id="pauseButton" class="runButton" onclick="onPause();" type="button" value="Pause" style="width: 80px; padding: 5px;">
+        <button class="runButton" onclick="stepForward();" style="width: 80px; padding: 5px;">Next </button>
       </div>
-      <button>X</button>
+      <button class="runButton" onclick="stop();" style="width: 30px; height: 30px; padding: 0px;">X</button>
     </div>
-  
-    <div id="centered" class="d-flex justify-content-center" style="height: 100%;">
-    
-      </div>
+
+    <div id="centered" onclick="onPause();" class="d-flex justify-content-center" style="height: 100%; cursor: pointer;">
+
+    </div>
   </div>
   <div id="snackbarSuccess">Images Loaded! Now you can train.</div>
   <div id="snackbarError">No images are found!</div>

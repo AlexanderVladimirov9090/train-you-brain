@@ -1,6 +1,7 @@
 const apiKey = '162f8c531c9a63e66d92cc5cb713c709'; // Flickr Api Key.
 let results; // Results from the query.
-searchBar = document.getElementById('searchBar');
+// let button = document.getElementById('trainButton'); // Button for training
+let searchBar = document.getElementById('searchBar');
 /**
  * Searches for images by keywords.
  */
