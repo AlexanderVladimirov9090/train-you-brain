@@ -1,3 +1,11 @@
+/* Body's CSS */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+}
+
+/* Slider's CSS */
 .slidecontainer {
   width: 100%;
   margin-bottom: 20px
@@ -34,16 +42,7 @@
   cursor: pointer;
 }
 
-* {box-sizing: border-box;}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 20px;
-}
-
-
-
+/* Search's CSS */
  .search-container {
   float: right;
   margin-bottom: 20px
@@ -73,6 +72,7 @@ body {
   background: #ccc;
 }
 
+/* Run Button's CSS */
 .runButton{
   padding: 5px;
   background: #ddd;
@@ -83,11 +83,39 @@ body {
   margin-bottom: 20px;
 }
 
-.image{
-  height: 30%;
-  width: 30%;
+.runButton:hover{
+  background: rgb(110, 110, 110);
 }
 
+/* Image's CSS*/
+.image{
+ height: 100%;  
+  /* height: auto; */
+}
+
+#imageHolder{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 0px;
+  background-color: white;
+  visibility: hidden;
+  padding: 10px 20px 100px 20px;
+}
+
+#menuHolder > *{
+  margin-right: 10px;
+}
+
+.showHolder{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100% !important;
+  height: 100% !important;
+  visibility: visible !important;
+}
  /* The snackbar - position it at the bottom and in the middle of the screen */
  #snackbarSuccess {
   visibility: hidden; /* Hidden by default. Visible on click */
@@ -101,7 +129,7 @@ body {
   position: fixed; /* Sit on top of the screen */
   z-index: 1; /* Add a z-index if needed */
   left: 50%; /* Center the snackbar */
-  bottom: 30px; /* 30px from the bottom */
+  top: 30px; /* 30px from the bottom */
 }
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
@@ -126,7 +154,7 @@ body {
   position: fixed; /* Sit on top of the screen */
   z-index: 1; /* Add a z-index if needed */
   left: 50%; /* Center the snackbar */
-  bottom: 30px; /* 30px from the bottom */
+  top: 30px; /* 30px from the bottom */
 }
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
@@ -137,23 +165,24 @@ body {
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
+
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
 }
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
 }
 
 @-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
 }
 
 @keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
 } 

@@ -17,7 +17,7 @@
     <div class="search-container">
 
       <input id="searchBar" class="searchBar" type="text" placeholder="Search.." name="search">
-      <button type="submit" onclick="loadDoc()"><i class="fa fa-search"></i></button>
+      <button id="searchButton" type="submit" onclick="search()"><i class="fa fa-search"></i></button>
 
     </div>
   </div>
@@ -28,11 +28,22 @@
   <div class="slidecontainer d-flex justify-content-center">
     <input type="range" min="1" max="60" value="1" class="slider" id="speedRange">
   </div>
-  <div id="trainButton" class="d-flex justify-content-center">
-    <button onclick="iterate();" type="button" name="button" class="runButton">Run training</button>
+  <div id="trainButton" class="d-flex justify-content-center" style="visibility: hidden;">
+    <button onclick="formStart();" type="button" name="button" class="runButton">Run training</button>
   </div>
-  <div class="d-flex justify-content-center">
-    <img alt="Smiley face" class="image" id="image">
+  <div id="imageHolder">
+    <div class="d-flex justify-content-between" style=" padding-top: 5px;">
+      <div id="menuHolder" class="d-flex justify-content-center">
+        <button class="runButton" onclick="stepBack();" style="width: 80px; padding: 5px;">Previous</button>
+        <input id="pauseButton" class="runButton" onclick="onPause();" type="button" value="Pause" style="width: 80px; padding: 5px;">
+        <button class="runButton" onclick="stepForward();" style="width: 80px; padding: 5px;">Next </button>
+      </div>
+      <button class="runButton" onclick="stop();" style="width: 30px; height: 30px; padding: 0px;">X</button>
+    </div>
+
+    <div id="centered" onclick="onPause();" class="d-flex justify-content-center" style="height: 100%; cursor: pointer;">
+
+    </div>
   </div>
   <div id="snackbarSuccess">Images Loaded! Now you can train.</div>
   <div id="snackbarError">No images are found!</div>

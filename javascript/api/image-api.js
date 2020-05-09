@@ -1,45 +1,66 @@
-const apiKey = '162f8c531c9a63e66d92cc5cb713c709';
-let results;
-function loadDoc() {
-    console.log('Hello');
-    searchBar = document.getElementById('searchBar');
+const apiKey = '162f8c531c9a63e66d92cc5cb713c709'; // Flickr Api Key.
+let results; // Results from the query.
+// let button = document.getElementById('trainButton'); // Button for training
+let searchBar = document.getElementById('searchBar');
+/**
+ * Searches for images by keywords.
+ */
+function search() {
+   
     if (!searchBar.value) {
         return;
     }
     let keyword = searchBar.value;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
+    var imageSearchRequest = new XMLHttpRequest();
+    imageSearchRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             results = JSON.parse(this.response);
-            console.log(results)
             for (const eachResult of results.photos.photo) {
-                console.log(eachResult)
-                eachResult.picSrouce = `https://farm${eachResult.farm}.staticflickr.com/${eachResult.server}/${eachResult.id}_${eachResult.secret}.jpg`
-                console.log()
+                let image = new Image();
+                image.id = eachResult.id;
+                image.style.display = 'none';
+                image.className = 'image';
+                image.src = `https://farm${eachResult.farm}.staticflickr.com/${eachResult.server}/${eachResult.id}_${eachResult.secret}.jpg`;
+                eachResult.picSrouce = image;
             }
             imagesLoaded();
+            button.style.visibility = 'visible';
         }
-        if (this.stat === "fail") {
+        if (this.stat === 'fail') {
             imagesError();
         }
-
+   
     };
-    xhttp.open("GET", `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${keyword}&per_page=200&page=1&format=json&nojsoncallback=1`);
-    xhttp.send();
+    imageSearchRequest.open('GET', `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${keyword}&per_page=2000&page=1&format=json&nojsoncallback=1`);
+    imageSearchRequest.send();
 }
 
+/**
+ * Shows snackbar when query has return successfuly.
+ */
 function imagesLoaded() {
-    var x = document.getElementById("snackbarSuccess");
-    x.className = "show";
-    x.value = 'Images Loaded! Now you can train.';
+    var snackBarSuccess = document.getElementById('snackbarSuccess');
+    snackBarSuccess.className = 'show';
     setTimeout(function () {
-        x.className = x.className.replace("show", "");
+        snackBarSuccess.className = snackBarSuccess.className.replace('show', '');
     }, 3000);
 }
 
+/**
+ * Shows snackbar when query fails.
+ */
 function imagesError() {
-    var x = document.getElementById("snackbarError");
-    x.className = "show";
-    x.value = 'No images are found.';
-    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    var snackbarError = document.getElementById('snackbarError');
+    snackbarError.className = 'show';
+    setTimeout(function () { snackbarError.className = snackbarError.className.replace('show', ''); }, 3000);
 } 
+
+searchBar.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      document.getElementById("searchButton").click();
+    }
+  }); 
