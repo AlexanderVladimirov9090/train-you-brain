@@ -13,11 +13,7 @@ body {
 
 /* Rottating beams of light */
 img{
-  position: absolute;
-  top:0px;
-  left: 25%;
-  bottom: 0px;
-  right: 0px;
+
   height: 100%;
   border-radius: 50%;
   z-index: 1;
@@ -27,6 +23,15 @@ img{
   -webkit-animation:spin 50s linear infinite;
   -moz-animation:spin 50s linear infinite;
   animation:spin 50s linear infinite;
+}
+
+.imgContainer{
+  position: absolute;
+  top:0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }
@@ -65,7 +70,7 @@ img{
 /* Particles flying animations */
 .wrap {
   transform-style: preserve-3d;
-  perspective: 300px;
+  perspective: 500px;
 }
 
 .star {
