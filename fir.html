@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fast Image Reaction</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css\base-styles.css">
+
+</head>
+
+<body>
+  <h1 class="d-flex justify-content-center">Train your brain</h1>
+  <div class="d-flex justify-content-center">
+    <div class="search-container">
+
+      <input id="searchBar" class="searchBar" type="text" placeholder="Search.." name="search">
+      <button id="searchButton" type="submit" onclick="search()"><i class="fa fa-search"></i></button>
+
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    Images per second:
+    <p id="demo"></p>
+  </div>
+  <div class="slidecontainer d-flex justify-content-center">
+    <input type="range" min="1" max="60" value="1" class="slider" id="speedRange">
+  </div>
+  <div id="trainButton" class="d-flex justify-content-center" style="visibility: hidden;">
+    <button onclick="formStart();" type="button" name="button" class="runButton">Run training</button>
+  </div>
+  <div id="imageHolder">
+    <div class="d-flex justify-content-between" style=" padding-top: 5px;">
+      <div id="menuHolder" class="d-flex justify-content-center">
+        <button class="runButton" onclick="stepBack();" style="width: 80px; padding: 5px;">Previous</button>
+        <input id="pauseButton" class="runButton" onclick="onPause();" type="button" value="Pause" style="width: 80px; padding: 5px;">
+        <button class="runButton" onclick="stepForward();" style="width: 80px; padding: 5px;">Next </button>
+      </div>
+      <button class="runButton" onclick="stop();" style="width: 30px; height: 30px; padding: 0px;">X</button>
+    </div>
+
+    <div id="centered" onclick="onPause();" class="d-flex justify-content-center" style="height: 100%; cursor: pointer;">
+
+    </div>
+  </div>
+  <div id="snackbarSuccess">Images Loaded! Now you can train.</div>
+  <div id="snackbarError">No images are found!</div>
+  <script src="javascript\image-loader.js"></script>
+  <script src="javascript\api\image-api.js"></script>
+</body>
+
+</html>
